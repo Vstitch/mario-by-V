@@ -55,31 +55,52 @@ function Home() {
           Classic strategy meets chaotic Mario magic. Play with Mario, Peach, Yoshi & Luigi — defeat Bowser's army.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <Link
-            to="/play"
-            search={{ d: "koopa" }}
-            className="group relative px-10 py-4 rounded-2xl bg-gradient-to-b from-mario-red to-[oklch(0.5_0.22_22)] border-2 border-coin-gold text-primary-foreground font-display text-xl tracking-wider uppercase shadow-glow-red hover:scale-105 transition-transform active:scale-95"
-          >
-            <span className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/30 to-transparent opacity-50 group-hover:opacity-80 transition-opacity" />
-            <span className="relative">▶ Play Now</span>
-          </Link>
+        <div className="flex flex-col gap-6 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            <Link
+              to="/play"
+              search={{ d: "koopa" }}
+              className="group relative px-10 py-4 rounded-2xl bg-gradient-to-b from-mario-red to-[oklch(0.5_0.22_22)] border-2 border-coin-gold text-primary-foreground font-display text-xl tracking-wider uppercase shadow-glow-red hover:scale-105 transition-transform active:scale-95"
+            >
+              <span className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/30 to-transparent opacity-50 group-hover:opacity-80 transition-opacity" />
+              <span className="relative">▶ Play Vs AI</span>
+            </Link>
 
-          <Link
-            to="/play"
-            search={{ d: "goomba" }}
-            className="px-8 py-4 rounded-2xl bg-card/80 backdrop-blur border-2 border-luigi-green text-foreground font-display tracking-wider uppercase hover:bg-luigi-green/30 transition-colors"
-          >
-            🍄 Easy Mode
-          </Link>
+            <Link
+              to="/multiplayer"
+              className="group relative px-10 py-4 rounded-2xl bg-gradient-to-b from-luigi-green to-emerald-600 border-2 border-coin-gold text-primary-foreground font-display text-xl tracking-wider uppercase shadow-glow-green hover:scale-105 transition-transform active:scale-95"
+            >
+              <span className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/30 to-transparent opacity-50 group-hover:opacity-80 transition-opacity" />
+              <span className="relative">👥 Play Online</span>
+            </Link>
+          </div>
 
-          <Link
-            to="/play"
-            search={{ d: "bowser" }}
-            className="px-8 py-4 rounded-2xl bg-card/80 backdrop-blur border-2 border-nintendo-blue text-foreground font-display tracking-wider uppercase hover:bg-nintendo-blue/30 transition-colors"
-          >
-            🔥 Bowser AI
-          </Link>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <span className="text-xs font-display text-muted-foreground uppercase tracking-widest self-center mr-2">Or Choose AI:</span>
+            <Link
+              to="/play"
+              search={{ d: "goomba" }}
+              className="px-4 py-2 rounded-xl bg-card/85 backdrop-blur border border-muted hover:border-luigi-green text-xs text-foreground font-display tracking-wider uppercase hover:bg-luigi-green/20 transition-all"
+            >
+              🍄 Goomba (Easy)
+            </Link>
+
+            <Link
+              to="/play"
+              search={{ d: "koopa" }}
+              className="px-4 py-2 rounded-xl bg-card/85 backdrop-blur border border-muted hover:border-coin-gold text-xs text-foreground font-display tracking-wider uppercase hover:bg-coin-gold/20 transition-all"
+            >
+              🐢 Koopa (Medium)
+            </Link>
+
+            <Link
+              to="/play"
+              search={{ d: "bowser" }}
+              className="px-4 py-2 rounded-xl bg-card/85 backdrop-blur border border-muted hover:border-mario-red text-xs text-foreground font-display tracking-wider uppercase hover:bg-mario-red/20 transition-all"
+            >
+              🔥 Bowser (Hard)
+            </Link>
+          </div>
         </div>
 
         {/* Feature stripe */}
