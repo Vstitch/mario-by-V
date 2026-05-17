@@ -79,7 +79,7 @@ function MultiplayerPage() {
     );
     
     // Replace this URL with your live deployed Render server URL once it is created!
-    const PROD_SOCKET_URL = "https://mariochess-server.onrender.com";
+    const PROD_SOCKET_URL = "https://mariochess-v-server.onrender.com";
     
     const socketUrl = typeof window !== "undefined"
       ? (isLocal ? `http://${window.location.hostname}:3001` : PROD_SOCKET_URL)
