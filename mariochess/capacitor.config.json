@@ -1,9 +1,9 @@
 {
   "appId": "com.mariochess.app",
-  "appName": "Super Mario Chess",
+  "appName": "chess mario",
   "webDir": "dist/client",
   "server": {
-    "url": "http://10.0.2.2:8080",
+    "url": "http://192.168.1.2:8080",
     "cleartext": true
   }
 }

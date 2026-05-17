@@ -77,8 +77,12 @@ function MultiplayerPage() {
       window.location.hostname.startsWith("192.168.") ||
       window.location.hostname.startsWith("10.")
     );
+    
+    // Replace this URL with your live deployed Render server URL once it is created!
+    const PROD_SOCKET_URL = "https://mariochess-server.onrender.com";
+    
     const socketUrl = typeof window !== "undefined"
-      ? `${isLocal ? "http" : window.location.protocol.slice(0, -1)}://${window.location.hostname}:${isLocal ? "3001" : window.location.port || "3001"}`
+      ? (isLocal ? `http://${window.location.hostname}:3001` : PROD_SOCKET_URL)
       : "http://localhost:3001";
       
     console.log("Connecting to WebSocket server:", socketUrl);
