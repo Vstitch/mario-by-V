@@ -30,3 +30,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Confidential & Secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+*.pem
+*.key
+credentials.json
+google-services.json
+GoogleService-Info.plist
+
+# Android Signing Keys & Keystores
+*.keystore
+*.jks
+*.p12
+*.pfx
+private.pepk
