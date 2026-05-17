@@ -3,7 +3,7 @@
   "appName": "chess mario",
   "webDir": "dist/client",
   "server": {
-    "url": "http://192.168.1.2:8080",
-    "cleartext": true
+    "url": "https://mariochess-v-server.vinitharameshchand.workers.dev",
+    "cleartext": false
   }
 }
