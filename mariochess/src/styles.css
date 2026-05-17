@@ -1,0 +1,166 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-mario-red: var(--mario-red);
+  --color-nintendo-blue: var(--nintendo-blue);
+  --color-luigi-green: var(--luigi-green);
+  --color-coin-gold: var(--coin-gold);
+  --color-peach-pink: var(--peach-pink);
+  --color-sky: var(--sky);
+  --color-board-light: var(--board-light);
+  --color-board-dark: var(--board-dark);
+
+  --font-display: "Bungee", "Fredoka", system-ui, sans-serif;
+  --font-body: "Fredoka", system-ui, sans-serif;
+
+  --shadow-coin: 0 0 24px oklch(0.85 0.18 90 / 0.6);
+  --shadow-piece: 0 6px 12px oklch(0 0 0 / 0.35);
+  --shadow-glow-red: 0 0 32px oklch(0.65 0.24 28 / 0.55);
+  --shadow-glow-blue: 0 0 32px oklch(0.62 0.2 240 / 0.55);
+
+  --gradient-sky: linear-gradient(180deg, oklch(0.86 0.08 350) 0%, oklch(0.78 0.12 240) 100%);
+  --gradient-coin: linear-gradient(135deg, oklch(0.88 0.18 95), oklch(0.75 0.2 75));
+  --gradient-pipe: linear-gradient(180deg, oklch(0.7 0.18 145), oklch(0.5 0.18 145));
+  --gradient-mario: linear-gradient(135deg, oklch(0.62 0.24 28), oklch(0.5 0.22 22));
+  --gradient-board: linear-gradient(135deg, oklch(0.32 0.05 240), oklch(0.18 0.05 250));
+
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-coin-spin: coin-spin 2s linear infinite;
+  --animate-bob: bob 1.5s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-piece-pop: piece-pop 0.3s ease-out;
+  --animate-capture: capture 0.5s ease-out forwards;
+}
+
+:root {
+  --radius: 1rem;
+
+  /* Mario palette */
+  --mario-red: oklch(0.62 0.24 28);
+  --nintendo-blue: oklch(0.62 0.18 240);
+  --luigi-green: oklch(0.68 0.2 145);
+  --coin-gold: oklch(0.85 0.18 90);
+  --peach-pink: oklch(0.85 0.1 10);
+  --sky: oklch(0.78 0.12 240);
+
+  /* Board */
+  --board-light: oklch(0.92 0.08 95);
+  --board-dark: oklch(0.55 0.18 145);
+
+  /* Semantic - dark gamer theme */
+  --background: oklch(0.16 0.04 260);
+  --foreground: oklch(0.98 0.01 90);
+  --card: oklch(0.22 0.05 260);
+  --card-foreground: oklch(0.98 0.01 90);
+  --popover: oklch(0.22 0.05 260);
+  --popover-foreground: oklch(0.98 0.01 90);
+  --primary: oklch(0.62 0.24 28);
+  --primary-foreground: oklch(0.98 0.01 90);
+  --secondary: oklch(0.62 0.18 240);
+  --secondary-foreground: oklch(0.98 0.01 90);
+  --muted: oklch(0.28 0.04 260);
+  --muted-foreground: oklch(0.72 0.03 260);
+  --accent: oklch(0.85 0.18 90);
+  --accent-foreground: oklch(0.18 0.04 260);
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.35 0.05 260);
+  --input: oklch(0.28 0.05 260);
+  --ring: oklch(0.85 0.18 90);
+}
+
+.dark {
+  --background: oklch(0.16 0.04 260);
+  --foreground: oklch(0.98 0.01 90);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Bungee + Fredoka via Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600;700&display=swap");
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes coin-spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--coin-gold); }
+  50% { box-shadow: 0 0 32px var(--coin-gold), 0 0 64px var(--coin-gold); }
+}
+@keyframes piece-pop {
+  0% { transform: scale(0.5) rotate(-12deg); opacity: 0; }
+  60% { transform: scale(1.15) rotate(4deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes capture {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4) rotate(20deg); opacity: 0.8; filter: brightness(2); }
+  100% { transform: scale(0) rotate(180deg); opacity: 0; }
+}
+@keyframes drift {
+  0% { transform: translateX(-20px); }
+  100% { transform: translateX(calc(100vw + 20px)); }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px oklch(0.18 0.04 260);
+  text-shadow: 0 4px 0 oklch(0.18 0.04 260), 0 6px 12px oklch(0 0 0 / 0.4);
+}
+
+.mario-card {
+  background: linear-gradient(180deg, oklch(0.25 0.05 260 / 0.85), oklch(0.18 0.05 260 / 0.95));
+  backdrop-filter: blur(12px);
+  border: 2px solid oklch(0.85 0.18 90 / 0.3);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px oklch(0 0 0 / 0.4), inset 0 1px 0 oklch(1 0 0 / 0.1);
+}
